@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: {
     default: "Event Finder",
-    template: "%s | Event"
+    template: "%s | Event Finder"
   },
   description: "Home page for Event Finder"
 };
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900 text-slate-200`}
       >
         {children}
       </body>

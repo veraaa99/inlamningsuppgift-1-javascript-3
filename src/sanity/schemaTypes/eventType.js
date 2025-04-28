@@ -3,27 +3,27 @@ import { ConfettiIcon } from '@sanity/icons'
 
 export const eventType = defineType({
     name: "event",
-    title: "Event",
+    title: "event",
     type: "document",
     icon: ConfettiIcon,
     fields: [
         defineField({
-            name: "Title",
+            name: "title",
             type: "string"
         }),
         defineField({
             name: "slug",
             type: "slug",
             options: {
-                source: "Title",
+                source: "title",
             }
         }),
         defineField({
-            name: "Description",
+            name: "description",
             type: "blockContent"
         }),
         defineField({
-            name: "Date",
+            name: "date",
             type: "datetime",
             options: {
                 dateFormat: 'YYYY-MM-DD',
@@ -32,21 +32,21 @@ export const eventType = defineType({
             }
         }),
         defineField({
-            name: "Image",
+            name: "image",
             type: "image",
             options: {
                 headspot: true
             },
             fields: [
                 defineField({
-                    name: "altText",
+                    name: "alt",
                     title: "Enter alt text",
                     type: "string"
                 })
             ]
         }),
         defineField({
-            name: "Location",
+            name: "location",
             type: "string"
         }),
     ]
