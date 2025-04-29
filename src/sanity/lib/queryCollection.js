@@ -11,14 +11,15 @@ export const GET_ALL_EVENTS_QUERY = defineQuery(`*[_type == 'event'] {
 }`)
 
 
-export const GET_EVENT_QUERY = defineQuery(`*[_type == 'event'] {
+export const GET_EVENT_QUERY = defineQuery(`*[_type == 'event' && slug.current ==$slug][0] {
   _id,
   title,
   "slug": slug.current,
+  description,
+  date,
   "image": {
   "url": image.asset->url,
   "alt": image.alt
   },
-  date,
   location
 }`)
