@@ -1,14 +1,23 @@
-import Link from "next/link"
+import { getAllPages } from "@/sanity/lib/api"
+import { NavLink } from "./navlink"
 
-export const Navbar = () => {
+export const Navbar = async () => {
+
+  const pages = await getAllPages()
+
   return (
-    <nav className="flex justify-between">
+    <nav className="flex justify-between m-10">
         <div>
-            <span>Bla</span>
+            <span>EventFinder</span>
         </div>
-        <ul className="flex flex-row">
-            <li><Link href="/" className="mr-20 cursor-pointer">Home</Link></li>
-            <li><Link href="/events" className="mr-20 cursor-pointer">Events</Link></li>
+        <ul className="flex flex-row gap-4">
+          {
+            pages.map(page => (
+              <li key={page._id}>
+                  <NavLink href={`${page.slug === "/" ? '' : '/'}${page.slug}`}>{ page.title }</NavLink>
+              </li>
+            ))
+          }
         </ul>
     </nav>
   )

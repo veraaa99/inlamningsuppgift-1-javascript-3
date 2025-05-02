@@ -10,7 +10,7 @@ export const Sections = ({ sections }) => {
             sections && sections.map(section => {
                 switch(section._type) {
                     case "eventsSection":
-                        return <Events key={section._key} title={section.title} />
+                        return <Events key={section._key} />
                     default:
                         return null
                 }

@@ -1,14 +1,13 @@
-import { Events } from "@/components/events"
+import { Sections } from "@/components/sections"
+import { getPageBySlug } from "@/sanity/lib/api"
 
-function EventPage() {
+async function EventPage() {
+
+  const page = await getPageBySlug('events')
+
     return (
       <div>
-        <div>
-          <h1>Events page</h1>
-        </div>
-        <div>
-          <Events />
-        </div>
+          <Sections sections={page.sections} />
       </div>
     )
   }

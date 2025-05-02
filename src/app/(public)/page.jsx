@@ -1,8 +1,13 @@
-function HomePage() {
+import { Sections } from "@/components/sections"
+import { getPageBySlug } from "@/sanity/lib/api"
+
+async function HomePage() {
+
+  const page = await getPageBySlug('/')
+
   return (
     <div>
-      <h1>Welcome to Event Finder!</h1>
-      <h2>Browse and create all kinds of fun events for everyone!</h2>
+      <Sections sections={page.sections}/>
     </div>
   )
 }
@@ -16,3 +21,7 @@ export default HomePage
 // Lägg in generateMetaData-funktioner
 
 // Fixa sanityfetch, visual editing & live preview
+
+// Fixa lite sections/herosections som kan visas på home page
+
+// Fixa en komponent som heter event, och en som heter eventsection?

@@ -38,7 +38,6 @@ fields: [
         name: "sections",
         type: "array",
         of: [
-            // defineArrayMember({ type: "heroSection" }),
             defineArrayMember({ type: "eventsSection" })
         ],
         options: {
