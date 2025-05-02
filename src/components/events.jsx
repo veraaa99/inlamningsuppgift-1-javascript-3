@@ -2,7 +2,7 @@ import { getAllEvents } from "@/sanity/lib/api"
 import Image from "next/image"
 import Link from "next/link"
 
-export const EventsSection = async() => {
+export const Events = async( title ) => {
 
   const events = await getAllEvents()
   console.log(events)
@@ -23,7 +23,7 @@ export const EventsSection = async() => {
                       className="w-full h-full object-cover"
                       />
                   </div>
-                  <h3 className="text-center">{event.title}</h3>
+                  <h3 className="text-center">{title}</h3>
               </Link>
             ))
           }

@@ -10,7 +10,6 @@ export const GET_ALL_EVENTS_QUERY = defineQuery(`*[_type == 'event'] {
   }
 }`)
 
-
 export const GET_EVENT_QUERY = defineQuery(`*[_type == 'event' && slug.current ==$slug][0] {
   _id,
   title,
@@ -22,4 +21,10 @@ export const GET_EVENT_QUERY = defineQuery(`*[_type == 'event' && slug.current =
   "alt": image.alt
   },
   location
+}`)
+
+export const GET_ALL_PAGES = defineQuery(`*[_type == 'page'] {
+  _id,
+  title,
+  "slug": slug.current
 }`)

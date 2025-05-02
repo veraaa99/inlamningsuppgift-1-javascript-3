@@ -1,4 +1,4 @@
-import { EventsSection } from "@/components/eventsSection"
+import { Events } from "@/components/events"
 
 function EventPage() {
     return (
@@ -7,7 +7,7 @@ function EventPage() {
           <h1>Events page</h1>
         </div>
         <div>
-          <EventsSection />
+          <Events />
         </div>
       </div>
     )

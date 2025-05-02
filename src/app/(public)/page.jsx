@@ -7,3 +7,12 @@ function HomePage() {
   )
 }
 export default HomePage
+
+// Fixa en sectionsfil som visar de sections som användaren har skapat/lagt in i home page
+// Lägg till pageTypefil i schematypes
+// Se till att olika sektioner finns tillgängliga att skapa i pagetype-filen
+// Fixa navbar (skapa och lägg till getpages och getPagebyslug-funktioner)
+
+// Lägg in generateMetaData-funktioner
+
+// Fixa sanityfetch, visual editing & live preview
