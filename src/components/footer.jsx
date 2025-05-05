@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <div className="text-center">
-        footer
+        &copy; 2025 Vera Althini
     </div>
   )
 }
