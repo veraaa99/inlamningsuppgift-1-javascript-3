@@ -33,7 +33,7 @@ export const generateMetadata = async ({ params }) => {
     return (
       <div>
         <div>
-          <h1>{event.title}</h1>
+          <h1 className="text-5xl">{event.title}</h1>
           <Image src={event.image.url} alt={event.image.alt} height={400} width={400}></Image>
         </div>
         <div>
