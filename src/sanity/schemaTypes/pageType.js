@@ -38,7 +38,8 @@ fields: [
         name: "sections",
         type: "array",
         of: [
-            defineArrayMember({ type: "eventsSection" })
+            defineArrayMember({ type: "eventsSection" }),
+            defineArrayMember({ type: "heroSection" })
         ],
         options: {
             insertMenu: {
