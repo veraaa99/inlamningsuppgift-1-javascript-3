@@ -16,7 +16,7 @@ export const metadata = {
     default: "Event Finder",
     template: "%s | Event Finder"
   },
-  description: "Home page for Event Finder"
+  description: "Browse and read about various events near you"
 };
 
 export default function RootLayout({ children }) {

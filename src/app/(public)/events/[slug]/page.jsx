@@ -1,14 +1,27 @@
 import { getEventBySlug } from "@/sanity/lib/api"
+import { client } from "@/sanity/lib/client"
+import { GET_EVENT_QUERY } from "@/sanity/lib/queryCollection"
 import { format } from "date-fns"
 import { sv } from "date-fns/locale"
 import { PortableText } from "next-sanity"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 
-async function EventDetailsPage({ params }) {
+export const generateMetadata = async ({ params }) => {
+    const { slug } = await params
+    const event = await client.fetch(GET_EVENT_QUERY, { slug })
 
-  const { slug } = await params
-  const event = await getEventBySlug(slug)
+    return {
+        title: event.title    
+    }
+}
+    
+    async function EventDetailsPage({ params }) {
+      
+      const { slug } = await params
+      const event = await getEventBySlug(slug)
+      console.log(event)
+      console.log(event.description[0].children[0].text)
 
   if(!event) {
     return notFound()

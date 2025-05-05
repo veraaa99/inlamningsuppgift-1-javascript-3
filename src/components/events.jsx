@@ -5,7 +5,6 @@ import Link from "next/link"
 export const Events = async() => {
 
   const events = await getAllEvents()
-  console.log(events)
 
   return (
     <div>

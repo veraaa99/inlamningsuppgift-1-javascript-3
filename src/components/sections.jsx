@@ -2,8 +2,6 @@ import { Events } from "./events"
 
 export const Sections = ({ sections }) => {
 
-    console.log(sections)
-
   return (
     <div>
         {
