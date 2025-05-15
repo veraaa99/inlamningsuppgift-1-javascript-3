@@ -1,6 +1,13 @@
 import { getAllPages } from "@/sanity/lib/api"
 import { NavLink } from "./navlink"
 
+import { Anton } from "next/font/google"
+
+const anton = Anton({
+  subsets: ["latin"],
+  weight: ["400"]
+})
+
 export const Navbar = async () => {
 
   const pages = await getAllPages()
@@ -8,7 +15,7 @@ export const Navbar = async () => {
   return (
     <nav className="flex justify-between m-10">
         <div>
-            <span>EventFinder</span>
+            <NavLink href="/"><span className={`${anton.className} text-3xl`}>EventFinder</span></NavLink>
         </div>
         <ul className="flex flex-row gap-4">
           {
