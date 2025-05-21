@@ -41,7 +41,7 @@ export const generateMetadata = async ({ params }) => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center gap-10 m-auto mt-5 md:m-0 ">
+          <div className="flex flex-col justify-center self-center gap-10 p-5 mt-5 md:m-0 ">
             <div>
               <h2 className="text-2xl md:text-4xl">Om eventet:</h2>
               <PortableText className="" value={event.description}/>

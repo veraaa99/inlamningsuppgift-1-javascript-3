@@ -1,11 +1,16 @@
 import { getAllPages } from "@/sanity/lib/api"
 import { NavLink } from "./navlink"
 
-import { Anton } from "next/font/google"
+import { Anton, Montserrat } from "next/font/google"
 
 const anton = Anton({
   subsets: ["latin"],
   weight: ["400"]
+})
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300"]
 })
 
 export const Navbar = async () => {
@@ -20,7 +25,7 @@ export const Navbar = async () => {
         <ul className="flex flex-row gap-4">
           {
             pages.map(page => (
-              <li key={page._id}>
+              <li key={page._id} className={`${montserrat.className} text-xl`}>
                   <NavLink href={`${page.slug === "/" ? '' : '/'}${page.slug}`}>{ page.title }</NavLink>
               </li>
             ))
