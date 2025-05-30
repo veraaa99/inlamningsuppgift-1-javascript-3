@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, create an .env file and paste the required variables to connect to the database.
+
+If you're using npm to run the project, make sure to install the necessary modules by running: `run npm install next --legacy-peer-deps`
+
+if the command above does not work, try deleting the package-lock.json file, and try again.
+
+Then, run the development server:
 
 ```bash
 npm run dev
