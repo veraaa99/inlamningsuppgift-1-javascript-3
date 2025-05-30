@@ -9,7 +9,7 @@ async function PublicLayout( { children } ) {
   return (
     <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
       <Navbar />
-      <main>
+      <main className=" bg-slate-950/50">
         { children }
       </main>
       <SanityLive />

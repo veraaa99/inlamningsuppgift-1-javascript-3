@@ -1,14 +1,29 @@
 import { getAllEvents } from "@/sanity/lib/api"
+import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"]
+})
+
+const montserratLight = Montserrat({
+  subsets: ["latin"],
+  weight: ["200"]
+})
 
 export const Events = async() => {
 
   const events = await getAllEvents()
 
   return (
-    <div className="w-full px-15">
-      <h1 className="text-5xl lg:text-7xl text-center font-light">Events:</h1>
+    <div className="w-full px-15 mb-10">
+      <h1 className={`${montserrat.className} text-5xl mt-10 lg:text-6xl text-center font-light`}>Events:</h1>
+      {
+        events.length == 0 &&
+        <h2 className={`${montserratLight.className} text-4xl mt-15 lg:text-5xl text-center font-light`}>No events avaliable</h2>
+      }
       <div className="grid grid-cols-1 gap-15 md:grid-cols-2 md:gap-18 xl:grid-cols-3 xl:gap-10 2xl:gap-10 mt-15">
           {
             events && events.map(event => (
@@ -22,7 +37,7 @@ export const Events = async() => {
                       className="w-full h-full object-cover"
                       />
                   </div>
-                  <h3 className="text-center text-xl font-extralight p-4">{event.title}</h3>
+                  <h3 className={`${montserratLight.className} text-center text-xl p-4`}>{event.title}</h3>
               </Link>
             ))
           }

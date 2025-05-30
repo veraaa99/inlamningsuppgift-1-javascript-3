@@ -3,13 +3,11 @@ export const structure = (S) =>
   S.list()
     .title('Blog')
     .items([
-      // S.documentTypeListItem('category').title('Categories'),
       S.documentTypeListItem('event').title('Events'),
       S.divider(),
       S.documentTypeListItem('page').title('Pages'),
       ...S.documentTypeListItems().filter(
         (item) => item.getId() && ![
-          // 'category', 
           'event', 
           'page'].includes(item.getId()),
       ),
